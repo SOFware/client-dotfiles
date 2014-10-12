@@ -1,0 +1,74 @@
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias be="bundle exec"
+alias bi="bundle install --path vendor"
+
+alias anm="be annotate -p before -e tests,fixtures,factories"
+alias rdbm="rake db:migrate && rake db:test:prepare && anm"
+
+alias gco='git checkout'
+alias gcb='git checkout -b'
+alias gst='git status'
+alias gau='git add -u'
+alias gad='git add .'
+# alias gcm='git commit -m'
+alias gcm='echo use gcv to compose message in vim'
+alias gcv='git commit -v'
+alias gcam='git commit -am'
+alias gship='git push origin production'
+alias gpub='git push origin master'
+alias gph='git push heroku master'
+alias gmm='git merge master'
+alias gdc='git diff --cached'
+alias gclean='be rake assets:clean && git add -u && git commit -m "assets:clean"'
+alias gcomp='gst && be rake assets:precompile && git add . && git commit -m "assets:precompile"'
+alias gsh="git shortlog | grep -E '^[ ]+\w+' | wc -l"
+alias gu="git shortlog | grep -E '^[^ ]'"
+##alias gpush='echo "Use gp!" && git push'
+
+alias pppml='cd ~/Sites/ppml_app && rails s'
+alias cddot='cd ~/Sites/dotfiles'
+alias cdass='cd ~/Sites/assessment'
+alias cdske='cd ~/Sites/skedify'
+alias cdbox='cd ~/Sites/vagrant_boxes'
+alias cdbase='cd ~/Sites/vagrant_boxes/base'
+
+alias vag=vagrant
+alias vu='vagrant up'
+alias vssh='vagrant ssh'
+alias vdf='vagrant destroy -f'
+alias vreset='vdf && vu'
+alias vshell='vagrant provision --provision-with shell'
+alias vfile='vagrant provision --provision-with file'
+alias vsab='cd ~/Sites/assessment && vendor/scripts/assessment-build'
+
+alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+
+# enable color support of ls.
+# source: http://blog.rogeriopvl.com/archives/change-ls-terminal-colors-in-os-x-leopard/
+alias ls='ls -aG'
+alias ll='ls -alFGh'
+alias lh='ls -d .*' # show hidden files only
+
+alias oo='open .'
+
+alias tls='tmux ls'
+alias tn='tmux new -s'
+alias ta='tmux attach -t'
+
+alias sr='spring rspec'
+alias rz='source ~/.zshrc'
+
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  alias v=vim
+  alias ll='ls -alFG --color=always'
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+  alias v="$( brew --prefix )/bin/vim"
+  alias ctags="$( brew --prefix )/bin/ctags"
+fi
+
+
+alias sandbox_db="cp ~/Sites/assessment/db/development.sqlite3 ~/Sites/assessment/db/sandbox.sqlite3"
