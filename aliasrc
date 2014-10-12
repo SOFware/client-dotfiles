@@ -61,6 +61,7 @@ alias ta='tmux attach -t'
 
 alias sr='spring rspec'
 alias rz='source ~/.zshrc'
+alias rb='source ~/.bashrc'
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
   alias v=vim
