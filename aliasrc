@@ -44,6 +44,10 @@ alias vshell='vagrant provision --provision-with shell'
 alias vfile='vagrant provision --provision-with file'
 alias vsab='cd ~/Sites/assessment && vendor/scripts/assessment-build'
 
+alias dls='docker ps -a'
+alias dst='docker ps -a -q | xargs docker stop'
+alias drm='docker ps -a -q | xargs docker rm'
+
 alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
