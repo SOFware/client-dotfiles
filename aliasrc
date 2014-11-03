@@ -1,3 +1,5 @@
+# vim: filetype=sh
+
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 alias ..='cd ..'
@@ -47,6 +49,14 @@ alias vsab='cd ~/Sites/assessment && vendor/scripts/assessment-build'
 alias dls='docker ps -a'
 alias dst='docker ps -a -q | xargs docker stop'
 alias drm='docker ps -a -q | xargs docker rm'
+
+alias ghost='scutil --get HostName'
+alias glocal='scutil --get LocalHostName'
+alias gcomp='scutil --get ComputerName'
+
+alias shost='scutil --set HostName'
+alias slocal='scutil --set LocalHostName'
+alias scomp='scutil --set ComputerName'
 
 alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
