@@ -58,7 +58,7 @@ alias shost='scutil --set HostName'
 alias slocal='scutil --set LocalHostName'
 alias scomp='scutil --set ComputerName'
 
-alias configass='~/assessment/vendor/scripts/configurator.rb'
+alias configure='~/assessment/vendor/scripts/configurator.rb'
 
 alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
