@@ -1,0 +1,17 @@
+[user]
+  name = client
+  email = client@gmail.com
+
+[alias]
+  co = checkout
+  unstage = reset HEAD
+  uncommit = reset --soft HEAD^
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  last = log -1 HEAD
+
+[color]
+  ui = true
+[core]
+  editor = vim
+[rerere]
+  enabled = true
